@@ -1,0 +1,6 @@
+export default {
+	ACTION_TYPES: {
+		INCREMENT: 'INCREMENT',
+		DECREMENT: 'DECREMENT',
+	}
+};
