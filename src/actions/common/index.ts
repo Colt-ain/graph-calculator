@@ -20,3 +20,30 @@ export const decrementCounter = (): any => {
 		});
 	};
 };
+
+export const updateValue = (equation: string | number): any => {
+	return (dispatch: AppDispatch): any => {
+		dispatch({
+			type: ACTION_TYPES.UPDATE_EQUATION,
+			payload: { equation },
+		});
+	};
+};
+
+export const removeValue = (): any => {
+	return (dispatch: AppDispatch): any => {
+		dispatch({
+			type: ACTION_TYPES.REMOVE_VALUE,
+			payload: { },
+		});
+	};
+};
+
+export const clearValue = (): any => {
+	return (dispatch: AppDispatch): any => {
+		dispatch({
+			type: ACTION_TYPES.CLEAR_VALUE,
+			payload: { },
+		});
+	};
+};

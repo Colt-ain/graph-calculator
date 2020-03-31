@@ -32,7 +32,7 @@ class Counter extends Component<CounterInterface> {
 }
 
 type mapStateToPropsType = {
-	counter: number
+	counter: number;
 };
 
 const mapStateToProps = (state: StoreInterface): mapStateToPropsType => {
