@@ -10,14 +10,20 @@ interface ActionInterface {
 const initialState = {
 	counter: 0,
 	equation: '',
+	isValidEquation: true,
+	min: 0,
+	max: 10,
 };
 
 interface CommonInterface {
 	counter: number;
 	equation: string;
+	isValidEquation: boolean;
+	min: number;
+	max: number;
 }
 
-export default function common(state: CommonInterface  = initialState, action: ActionInterface): CommonInterface {
+export default function common(state: CommonInterface = initialState, action: ActionInterface): CommonInterface {
 	const { type, payload } = action;
 
 	switch (type) {
@@ -45,7 +51,19 @@ export default function common(state: CommonInterface  = initialState, action: A
 			return { ...state, equation: initialState.equation };
 		}
 
+		case ACTION_TYPES.SET_EXTREMES: {
+			const { type, value } = payload;
 
+			if (type === 'max') return { ...state, max: value };
+
+			return { ...state, min: value };
+		}
+
+		case ACTION_TYPES.DRAW_GRAPH: {
+			const { type, min, max } = payload;
+
+			return { ...state };
+		}
 
 		default:
 			return state;
